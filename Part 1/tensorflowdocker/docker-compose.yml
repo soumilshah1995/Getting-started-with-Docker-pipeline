@@ -1,0 +1,17 @@
+version: "3.2"
+
+services:
+  myapp:
+    build: ./myapp
+    container_name: myapp
+    restart: always
+    depends_on:
+      - myapp2
+    ports:
+      - "5000:5000"
+  myapp2:
+    build: ./myapp2
+    container_name: myapp2
+    restart: always
+    ports:
+      - "6000"
